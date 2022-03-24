@@ -457,4 +457,7 @@ footer {
   .details {
     font-size: 10px;
   }
+  .img {
+    height: 100%;
+  }
 }
