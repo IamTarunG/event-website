@@ -8,24 +8,18 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Creepster&family=Pacifico&family=Reggae+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cantora+One&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <!-- <nav>
-      <a href="#section1" class="alogo"
-        ><img src="./assests/whitee.png" alt="" class="logo"
-      /></a>
-      <a href="#section1">Home</a>
-      <a href="#section2">About</a>
-      <a href="#section3">Technical Events</a>
-      <a href="#section4">Non Technical Events</a>
-      <a href="">Special Events</a>
-      <a href="#section5">Contact Us</a>
-      <img src="./icons/menu.png" alt="" class="menu" onclick="menuDisplay()" />
-    </nav> -->
+  <body style="font-family: 'Cantora One', sans-serif">
     <header class="header">
       <nav class="navbar">
         <a href="#" class="nav-logo"
@@ -60,13 +54,18 @@
     </header>
     <div class="img-container" id="section1">
       <div class="display-container">
-        <p class="show">
+        <p class="show a1">
           Be a Part of National Level Science and Technical Fest
         </p>
-        <h2 class="name-display" style="font-family: 'Pacifico', cursive">
-          Ciencia 2k22
-        </h2>
-        <p class="time">
+        <div id="pillar">
+          <div class="row">
+            <div class="wrap" style="font-family: 'Reggae One', cursive">
+              <div class="left">Ciencia</div>
+              <div class="right">2K22</div>
+            </div>
+          </div>
+        </div>
+        <p class="time a1">
           April 12<sup>th</sup> - 13<sup>th</sup> | Ibrahimpatnam
         </p>
       </div>
@@ -85,7 +84,22 @@
           the audience on such a large scale
         </p>
       </div>
-      <div class="img"></div>
+    </div>
+    <div class="wrapper">
+      <div class="container" id="c0">
+        <div class="image" id="i0">
+          <div class="city">
+            <?xml version="1.0" encoding="utf-8"?>
+
+            <img
+              src="./assests/img.jpg"
+              alt=""
+              width="300px;height:500px"
+              id="Layer_1"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <!-- 5K run -->
     <p class="main-events">Main Events</p>
@@ -100,7 +114,6 @@
       </div>
     </div>
 
-    <!-- Technical Events -->
     <p class="techEvents" id="section3">Technical Events</p>
     <div class="events">
       <div class="event-img">
@@ -108,7 +121,7 @@
         <p class="event-name">Tech</p>
       </div>
       <div class="event-img">
-        <img src="./icons/presentation.png" alt="" class="imgevent" />
+        <img src="./icons/mechanical-gears-.png" alt="" class="imgevent" />
         <p class="event-name">Tech</p>
       </div>
       <div class="event-img">

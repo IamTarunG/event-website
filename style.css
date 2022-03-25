@@ -1,10 +1,177 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
-
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+#pillar {
+  display: block;
+  margin: 100px auto;
+  width: 300px;
+  -webkit-transform: translateX(-200px);
+  transform: translateX(-200px);
+  -webkit-perspective: 1900px;
+  perspective: 1900px;
+}
+
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.row {
+  width: 800px;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transition: all 3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.row:hover .wrap {
+  -webkit-transform: rotateY(-45deg);
+  transform: rotateY(-45deg);
+  cursor: pointer;
+}
+
+.row:hover {
+  z-index: 1;
+}
+
+.row:hover .left:before {
+  width: 55%;
+}
+
+.row .left {
+  width: 400px;
+  padding: 15px 20px;
+  text-align: right;
+  color: #e0b0ff;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  font-weight: bold;
+  font-size: 3.5em;
+}
+
+.row .left:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+}
+
+.row .right {
+  width: 400px;
+  padding: 15px 20px;
+  text-align: left;
+  -webkit-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  color: #e0b0ff;
+  font-weight: bold;
+  font-size: 3.5em;
+}
+
+/* Ciencia 2k22 completed here */
+
+body {
+  font-family: "Raleway", sans-serif;
+  background: #eee;
+}
+
+.wrapper {
+  position: relative;
+  /* top: 10%; */
+  bottom: 30%;
+  left: 40%;
+  width: 300px;
+  height: 534px;
+  perspective: 900px;
+}
+
+.container {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s all ease;
+  transform: rotateX(60deg) scale(0.7);
+  perspective: 900px;
+  box-shadow: 0px 20px 50px #555;
+  animation: entry 1s linear 1;
+  /* z-index: 1; */
+}
+
+.container:hover {
+  cursor: pointer;
+  transform: rotate(0deg) scale(1) translateY(10px);
+  transition: 0.5s all ease;
+  z-index: 400;
+}
+
+@keyframes simple {
+  50% {
+    transform: translateX(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes simple1 {
+  50% {
+    transform: translateX(-10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes entry {
+  0% {
+    top: -20%;
+    opacity: 0.1;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+/* Image completed here */
 
 html {
   font-size: 62.5%;
@@ -21,6 +188,7 @@ a {
 nav ul li a {
   font-size: 11px;
 }
+
 .header {
   /* border-bottom: 1px solid #e2e8f0; */
   position: sticky;
@@ -59,7 +227,7 @@ nav ul li a {
 
 .nav-link {
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: bold;
   /* color: #475569; */
 }
 
@@ -91,7 +259,7 @@ nav a {
   text-decoration: underline;
 } */
 nav a {
-  color: #a62df7;
+  /* color: #a62df7; */
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -109,7 +277,7 @@ nav a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #a831f7;
+  background: #632d47;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -128,7 +296,7 @@ nav a:hover:after {
   /* background-attachment: fixed; */
 }
 .name-display {
-  font-size: 6em;
+  font-size: 8em;
   color: #e0b0ff;
 
   font-weight: bold;
@@ -156,7 +324,7 @@ nav a:hover:after {
 }
 .about-heading {
   font-size: 3em;
-  color: #c064fd;
+  color: #632d47;
   font-weight: bold;
   text-decoration: underline;
   padding: 2rem 0;
@@ -173,8 +341,8 @@ nav a:hover:after {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
-  padding: 1em 3em;
+  /* height: 100vh; */
+  padding: 3em;
   background: linear-gradient(rgba(224, 176, 255, 1), rgba(224, 176, 255, 0));
 }
 .about-content {
@@ -220,7 +388,7 @@ nav a:hover:after {
   font-size: 2rem;
 }
 .techEvents {
-  color: #b039ff;
+  color: #632d47;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -241,7 +409,7 @@ nav a:hover:after {
   justify-content: space-evenly;
 }
 .ntechevents {
-  color: #b039ff;
+  color: #632d47;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -289,7 +457,7 @@ footer {
 .main-events {
   text-align: center;
   font-size: 3rem;
-  color: #b039ff;
+  color: #632d47;
   text-decoration: underline;
   font-weight: bold;
 }
@@ -302,7 +470,7 @@ footer {
 .stechevents {
   text-align: center;
   font-size: 3rem;
-  color: #b039ff;
+  color: #632d47;
   text-decoration: underline;
   font-weight: bold;
   background-color: rgba(224, 176, 255, 1);
@@ -320,7 +488,38 @@ footer {
   align-items: center;
   justify-content: space-evenly;
 }
+@keyframes homeanime {
+  0% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes nameDisplay {
+  0% {
+    font-size: 2em;
+  }
 
+  100% {
+    font-size: 8em;
+  }
+}
+.a1 {
+  animation: homeanime 2s ease-in-out;
+}
+.name-display {
+  animation: nameDisplay 2s cubic-bezier(0, 1, 0.8, 2.8);
+}
 @media only screen and (max-width: 800px) {
   .show {
     font-size: 3rem;
@@ -422,6 +621,7 @@ footer {
     font-size: 2.4rem;
     text-align: center;
   }
+
   .about-content {
     font-size: 14px;
   }
@@ -460,4 +660,17 @@ footer {
   .img {
     height: 100%;
   }
+  @keyframes nameD {
+    0% {
+      font-size: 20px;
+    }
+    100% {
+      font-size: 50px;
+    }
+  }
+  .name-display {
+    animation: nameD 2s cubic-bezier(0, 1, 0.8, 2.8);
+  }
 }
+
+/*# sourceMappingURL=style.css.map */
