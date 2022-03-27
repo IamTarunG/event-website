@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:200");
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -7,13 +8,130 @@
   padding: 0;
   box-sizing: border-box;
 }
+.portfolio-single {
+  width: 33%;
+  min-width: 320px;
+  display: inline-block;
+  vertical-align: top;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.portfolio-single:hover figure,
+.portfolio-single.hover figure {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.portfolio-single figure {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  margin: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.portfolio-single figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.portfolio-single figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: gray;
+  background-image: linear-gradient(135deg, gray 100%);
+}
+
+.portfolio-single figcaption h4 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin: 0;
+  font-size: 1rem;
+  -webkit-transform: translateY(-75%);
+  transform: translateY(-75%);
+}
+
+.portfolio-single figcaption h4 a {
+  padding: 0.625rem;
+  color: #f7b633;
+  font-size: 1.5rem;
+  text-decoration: none;
+  background-color: #607d8b;
+  border-bottom: 0;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.portfolio-single figcaption h4 a:hover {
+  color: #607d8b;
+  background: none;
+  border-bottom: 2px dashed #607d8b;
+}
+
+/* DEMO purpose */
+/* html {
+  height: 100vh;
+  background-color: #90a4ae;
+  background-image: linear-gradient(62deg, #90a4ae 0%, #607d8b 100%);
+} */
+
+/* body {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+} */
+
+.demo-text {
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+/*# sourceMappingURL=style.css.map */
+
 #gradient {
   /* height: 300px;
   width: 300px;
   border: 1px solid black;
   font-size: 30px; */
-  background: linear-gradient(130deg, #e0b0ff, #ffffff);
-  background-size: 200% 200%;
+  background: linear-gradient(
+      130deg,
+      rgba(147, 242, 255, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("./assests/w4.png");
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat-y;
 
   -webkit-animation: Animation 5s ease infinite;
   -moz-animation: Animation 5s ease infinite;
@@ -109,7 +227,7 @@
   width: 400px;
   padding: 15px 20px;
   text-align: right;
-  color: #e0b0ff;
+  color: #ff6e8c;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transform: rotateY(0deg);
@@ -142,7 +260,7 @@
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  color: #e0b0ff;
+  color: #ff6e8c;
   font-weight: bold;
   font-size: 3.5em;
 }
@@ -151,37 +269,39 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  background: #eee;
+  /* background-image: url("./assests/whitee.png");
+  background-repeat: repeat-y;
+  background-position: center; */
 }
 
-.wrapper {
+/* .wrapper {
   position: relative;
 
   left: 40%;
   width: 200px;
   height: 500px;
   perspective: 900px;
-}
+} */
 
-.container {
+/* .container {
   position: absolute;
-  /* top: 0%;
+  top: 0%;
   width: 100%;
-  height: 100%; */
+  height: 100%;
   transition: 0.5s all ease;
   transform: rotateX(60deg) scale(0.7);
   perspective: 900px;
   box-shadow: 0px 20px 50px #555;
   animation: entry 1s linear;
   z-index: 1;
-}
+} */
 
-.container:hover {
+/* .container:hover {
   cursor: pointer;
   transform: rotate(0deg) scale(1) translateY(10px);
   transition: 0.5s all ease;
   z-index: 400;
-}
+} */
 
 @keyframes simple {
   50% {
@@ -231,13 +351,14 @@ a {
 }
 nav ul li a {
   font-size: 11px;
+  color: white;
 }
 
-.header {
-  /* border-bottom: 1px solid #e2e8f0; */
+/* .header {
+  border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
-}
+} */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -286,14 +407,12 @@ nav ul li a {
 nav {
   width: 100%;
   height: 8vh;
-  background-color: #e0b0ff;
+  /* background-color: #19171a; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   font-weight: bold;
   font-size: 1em;
-  position: sticky;
-  top: 0;
 }
 nav a {
   text-decoration: none;
@@ -303,7 +422,6 @@ nav a {
   text-decoration: underline;
 } */
 nav a {
-  /* color: #a62df7; */
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -321,7 +439,8 @@ nav a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #632d47;
+  background: #5a41c2;
+
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -331,27 +450,25 @@ nav a:hover:after {
 }
 
 .img-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("https://images.unsplash.com/photo-1647880953189-f26efb3884db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60");
+  background-image: url("https://www.teahub.io/photos/full/0-5579_download-wallpaper-stars-space-galaxy-hd-background-galaxy.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 95vh;
-  /* background-attachment: fixed; */
+  height: 100vh;
+  background-attachment: fixed;
 }
 .name-display {
   font-size: 8em;
-  color: #e0b0ff;
 
   font-weight: bold;
 }
 .show {
   font-size: 2.5em;
-  color: whitesmoke;
+  color: #c8e8ff;
 }
 .time {
   font-size: 2em;
-  color: whitesmoke;
+  color: #f7b633;
 }
 .display-container {
   display: flex;
@@ -368,7 +485,7 @@ nav a:hover:after {
 }
 .about-heading {
   font-size: 3em;
-  color: #632d47;
+  color: #f7b633;
   font-weight: bold;
   text-decoration: underline;
   padding: 2rem 0;
@@ -396,6 +513,33 @@ nav a:hover:after {
 .about-name {
   font-weight: bold;
   font-size: 3;
+  /* color: #c8e8ff; */
+}
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #fff800 0%,
+    #5a41c2 50%,
+    #ff1361 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 2em;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 .logo {
   width: 70px;
@@ -432,7 +576,7 @@ nav a:hover:after {
   font-size: 2rem;
 }
 .techEvents {
-  color: #632d47;
+  color: #f7b633;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -453,7 +597,7 @@ nav a:hover:after {
   justify-content: space-evenly;
 }
 .ntechevents {
-  color: #632d47;
+  color: #f7b633;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
@@ -501,7 +645,7 @@ footer {
 .main-events {
   text-align: center;
   font-size: 3rem;
-  color: #632d47;
+  color: #f7b633;
   text-decoration: underline;
   font-weight: bold;
 }
@@ -514,7 +658,7 @@ footer {
 .stechevents {
   text-align: center;
   font-size: 3rem;
-  color: #632d47;
+  color: #f7b633;
   text-decoration: underline;
   font-weight: bold;
   /* background-color: rgba(224, 176, 255, 1); */
