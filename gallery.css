@@ -1,0 +1,53 @@
+.row {
+  margin-top: 12px;
+}
+
+.column {
+  display: inline-block;
+  text-align: center;
+}
+
+figure {
+  overflow: hidden;
+}
+
+a p {
+  color: black;
+  margin-top: 8px;
+  font-family: "Open Sans", sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.column img {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+/* CSS Image Hover. Created refering to Naoya's Pen: https://codepen.io/nxworld/pen/ZYNOBZ */
+/*Sepia*/
+.column#sepia img {
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.column#sepia:hover img {
+  -webkit-filter: sepia(0);
+  filter: sepia(0);
+}
+
+/*GrayScale*/
+.column#grayscale img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.column#grayscale:hover img {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
